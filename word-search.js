@@ -14,8 +14,8 @@ const wordExists = (board, word) => {
 }
 
 const dfs = (board, word, i, j, strIndex) => {
-    // console.log(`board: ${board[i] ? board[i][j]: 'none'} and ${word[strIndex]}`,i < 0 || j < 0 || i >= board.length || strIndex > word.length || j >= board[i].length || board[i][j] !== word[strIndex]);
-    // console.log(`board: ${board[i] ? board[i][j]: 'none'} and ${word[strIndex]}`,i < 0 , j < 0 , i >= board.length , strIndex > word.length , j >= board[i].length , board[i][j] !== word[strIndex]);
+    console.log(`board: ${board[i] ? board[i][j]: 'none'} and ${word[strIndex]}`,i < 0 || j < 0 || i >= board.length || strIndex > word.length || j >= board[i].length || board[i][j] !== word[strIndex]);
+    console.log(`board: ${board[i] ? board[i][j]: 'none'} and ${word[strIndex]}`,i < 0 , j < 0 , i >= board.length , strIndex > word.length , j >= board[i].length , board[i][j] !== word[strIndex]);
     if (i < 0 || j < 0 || i >= board.length || j >= board[i].length || board[i][j] !== word[strIndex]) {
         return false;
     }
@@ -23,7 +23,7 @@ const dfs = (board, word, i, j, strIndex) => {
     if (strIndex === word.length - 1) {
         return true;
     }
-    // console.log(' ==> ' , board[i][j], strIndex, word.length);
+    console.log(' ==> ' , board[i][j], strIndex, word.length);
     const temp = board[i][j];
     board[i][j] = ' ';
     const found = dfs(board, word, i+1, j, strIndex + 1) ||
